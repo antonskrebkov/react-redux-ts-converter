@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Calculator";
+  src: url("../fonts/Calculator.woff2") format("woff2"),
+        url("../fonts/Calculator.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#mobile-menu {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.App {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  width: 100vw;
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-body {
+  scale: 1.5;
+  background-color: rgb(167, 167, 167);
+  width: 230px;
+  height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 3px rgb(70, 70, 70) solid;
+}
+
+.buttons {
+  margin-top: 15px;
+  width: 200px;
+  display: grid;
+  gap: 5px;
+}
+
+.buttons_row {
+  display: flex;
+}
+
+.buttons_row > input {
+  width: 40px;
+  padding: 0;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(43, 43, 43);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.buttons_row > input:hover {
+  opacity: 0.6;
+}
+
+.math {
+  background-color: rgb(235, 113, 13) !important;
+}
+.spec {
+  background-color: rgb(230, 230, 230) !important;
+  color: rgb(43, 43, 43) !important;
+}
+
+.container-exchange {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.send {
+  margin-top: 26px;
+}
+
+.fetch {
+  width: 83px;
+  height: 55px;
+  background-image: url('../images/icons8-arrow-90.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.3s all;
+}
+.fetch:hover {
+  scale: 1.1;
+}
+
+.loader {
+  width: 99px;
+  display: flex;
+  justify-content: center;
+}
