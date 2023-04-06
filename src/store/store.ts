@@ -1,11 +1,8 @@
 import { ratesAPI } from '../services/RatesService';
 import { exchangeAPI } from './../services/ExchangeService';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import exchangeReducer from './reducers/exchangeSlice';
-
 
 const rootReducer = combineReducers({
-  exchangeReducer,
   [ratesAPI.reducerPath]: ratesAPI.reducer,
   [exchangeAPI.reducerPath]: exchangeAPI.reducer,
 })

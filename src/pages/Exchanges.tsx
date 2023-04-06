@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import "../assets/styles/styles.css";
 import Loader from "../components/UI/loader/Loader";
 import trash from "../assets/images/trash.svg";
 import ExchangeItem from "../components/ExchangeItem/ExchangeItem";

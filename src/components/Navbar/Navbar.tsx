@@ -110,6 +110,7 @@ export default function Navbar() {
               <NavLink
                 key={link.name}
                 to={link.to}
+                onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) =>
                   isActive
                     ? "g-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"

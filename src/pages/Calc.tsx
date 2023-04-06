@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../assets/styles/styles.css";
 import NumberButton from "../components/UI/buttons/NumberButton";
 import SpecButton from "../components/UI/buttons/SpecButton";
 import MathButton from "../components/UI/buttons/MathButton";

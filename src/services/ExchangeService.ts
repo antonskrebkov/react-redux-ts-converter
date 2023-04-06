@@ -8,6 +8,10 @@ export const exchangeAPI = createApi({
   }),
   tagTypes: ['Exchange'],
   endpoints: (build) => ({
+    getCurrencies: build.query({
+      query: () => '/currencies',
+      providesTags: result => ['Exchange']
+    }),
     getExchangeHistory: build.query<IExchangeItem[], string>({
       query: () => '/exchange',
       providesTags: result => ['Exchange']
@@ -30,4 +34,4 @@ export const exchangeAPI = createApi({
   })
 })
 
-export const {useGetExchangeHistoryQuery, useAddExchangeItemMutation, useDeleteExchangeItemMutation,} = exchangeAPI;
+export const {useGetExchangeHistoryQuery, useAddExchangeItemMutation, useDeleteExchangeItemMutation, useGetCurrenciesQuery} = exchangeAPI;

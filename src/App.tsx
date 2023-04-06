@@ -4,6 +4,7 @@ import Converter from "./pages/Converter";
 import Exchanges from "./pages/Exchanges";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import NotFound from "./pages/NotFound";
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Calc />}></Route>
         <Route path="/converter" element={<Converter />}></Route>
         <Route path="/exchanges" element={<Exchanges />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
   );

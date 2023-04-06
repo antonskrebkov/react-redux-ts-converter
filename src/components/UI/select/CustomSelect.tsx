@@ -58,6 +58,10 @@ const CustomSelect: React.FC<СustomSelectProps> = (props) => {
           minHeight: "0px",
           padding: "0",
         }),
+        menuList: () => ({
+          height: "100px",
+          overflow: "scroll",
+        }),
       }}
       className={styles.join(" ")}
     />
