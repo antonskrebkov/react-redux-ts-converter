@@ -183,8 +183,8 @@ const Calc: React.FC = () => {
   }
 
   return (
-    <div className="App bg-gray-600">
-      <div className="calc-body shadow-2xl">
+    <div className="App flex justify-center items-center bg-gray-600">
+      <div className="calc-body scale-125 sm:scale-150 shadow-2xl">
         <PrettyInput
           className="field"
           type="text"

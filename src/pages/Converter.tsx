@@ -2,12 +2,12 @@ import { useState } from "react";
 import "../assets/styles/styles.css";
 import CustomSelect from "../components/UI/select/CustomSelect";
 import AmountInput from "../components/UI/amountInput/AmountInput";
-import axios, { AxiosError, AxiosResponse } from "axios";
 import Loader from "../components/UI/loader/Loader";
 import swap from "../assets/images/swap.svg";
 import ICurrency from "../interfaces/ICurrency";
 import IExchangeItem from "../interfaces/IExchangeItem";
-import ExchangeItem from "../components/ExchangeItem/ExchangeItem";
+import { ratesAPI } from "../services/RatesService";
+import { exchangeAPI } from "../services/ExchangeService";
 
 const Exchange: React.FC = () => {
   const currencies: ICurrency[] = [
@@ -182,123 +182,102 @@ const Exchange: React.FC = () => {
     { value: "ZMW", label: "ZMW" },
     { value: "ZWL", label: "ZWL" },
   ];
+
   const [amount, setAmount] = useState<string>("");
   const [fromCurrency, setFromCurrency] = useState<string>(currencies[0].value);
   const [toCurrency, setToCurrency] = useState<string>(currencies[1].value);
   const [convertedAmount, setConvertedAmount] = useState<string>("");
-  const [isFetching, setIsFetching] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [isEmpty, setIsEmpty] = useState<boolean>(false);
   const [moved, setMoved] = useState<boolean>(false);
-  const [exchangeList, setExchangeList] = useState<IExchangeItem[]>([]);
 
-  function fetchCurrencies() {
+  const [
+    getConvertedAmount,
+    { isLoading: isAmountLoading, isError: isAmountError },
+  ] = ratesAPI.useGetConvertedAmountMutation();
+  const [addExchangeItem] = exchangeAPI.useAddExchangeItemMutation();
+
+  const handleGetConvertedAmount = async () => {
     if (amount) {
-      setIsFetching(() => true);
-      setErrorMessage("");
-      setIsEmpty(false);
-      axios
-        .get(
-          moved
-            ? `https://api.apilayer.com/exchangerates_data/convert?to=${fromCurrency}&from=${toCurrency}&amount=${amount}`
-            : `https://api.apilayer.com/exchangerates_data/convert?to=${toCurrency}&from=${fromCurrency}&amount=${amount}`,
-          {
-            headers: {
-              apikey: "yjOPFmRND5OiQ6kyQslKPlXeBiZkBWTH",
-            },
-          }
-        )
-        .then((res: AxiosResponse) => {
-          console.log(res);
-          setConvertedAmount(res.data.result.toFixed(2));
-          setIsFetching(() => false);
-          moved
-            ? setExchangeList([
-                ...exchangeList,
-                {
-                  id: Date.now(),
-                  amount: +amount,
-                  fromCurrency: toCurrency,
-                  toCurrency: fromCurrency,
-                  convertedAmount: +res.data.result.toFixed(2),
-                },
-              ])
-            : setExchangeList([
-                ...exchangeList,
-                {
-                  id: Date.now(),
-                  amount: +amount,
-                  fromCurrency: fromCurrency,
-                  toCurrency: toCurrency,
-                  convertedAmount: +res.data.result.toFixed(2),
-                },
-              ]);
+      await getConvertedAmount(
+        moved
+          ? {
+              to: fromCurrency,
+              from: toCurrency,
+              amount,
+            }
+          : {
+              to: toCurrency,
+              from: fromCurrency,
+              amount,
+            }
+      )
+        .unwrap()
+        .then((res) => {
+          setConvertedAmount(String(res.result.toFixed(2)));
+          addExchangeItem({
+            timestamp: Date.now(),
+            rate: +res.info.rate.toFixed(2),
+            amount: res.query.amount,
+            fromCurrency: res.query.from,
+            toCurrency: res.query.to,
+            convertedAmount: +res.result.toFixed(2),
+          } as IExchangeItem);
         })
-        .catch((error: AxiosError) => {
-          setErrorMessage("Error: " + error.message);
-          setIsFetching(() => false);
+        .catch((e) => {
+          return e.data.message
+            ? setErrorMessage("Error: " + e.data.message)
+            : setErrorMessage("Error: " + e.data.error.message);
         });
     } else {
       setIsEmpty(true);
     }
-  }
+  };
 
-  function swapCurrencies() {
+  const swapCurrencies = async () => {
     if (amount) {
       setConvertedAmount("");
       setMoved(!moved);
-      setIsFetching(() => true);
       setErrorMessage("");
       setIsEmpty(false);
-      axios
-        .get(
-          !moved
-            ? `https://api.apilayer.com/exchangerates_data/convert?to=${fromCurrency}&from=${toCurrency}&amount=${amount}`
-            : `https://api.apilayer.com/exchangerates_data/convert?to=${toCurrency}&from=${fromCurrency}&amount=${amount}`,
-          {
-            headers: {
-              apikey: "yjOPFmRND5OiQ6kyQslKPlXeBiZkBWTH",
-            },
-          }
-        )
-        .then((res: AxiosResponse) => {
-          console.log(res);
-          setConvertedAmount(res.data.result.toFixed(2));
-          setIsFetching(() => false);
-          !moved
-            ? setExchangeList([
-                ...exchangeList,
-                {
-                  id: Date.now(),
-                  amount: +amount,
-                  fromCurrency: toCurrency,
-                  toCurrency: fromCurrency,
-                  convertedAmount: +res.data.result.toFixed(2),
-                },
-              ])
-            : setExchangeList([
-                ...exchangeList,
-                {
-                  id: Date.now(),
-                  amount: +amount,
-                  fromCurrency: fromCurrency,
-                  toCurrency: toCurrency,
-                  convertedAmount: +res.data.result.toFixed(2),
-                },
-              ]);
+      await getConvertedAmount(
+        !moved
+          ? {
+              to: fromCurrency,
+              from: toCurrency,
+              amount,
+            }
+          : {
+              to: toCurrency,
+              from: fromCurrency,
+              amount,
+            }
+      )
+        .unwrap()
+        .then((res) => {
+          setConvertedAmount(res.result.toFixed(2));
+          addExchangeItem({
+            timestamp: Date.now(),
+            rate: +res.info.rate.toFixed(2),
+            amount: res.query.amount,
+            fromCurrency: res.query.from,
+            toCurrency: res.query.to,
+            convertedAmount: +res.result.toFixed(2),
+          } as IExchangeItem);
         })
-        .catch((error: AxiosError) => {
-          setErrorMessage("Error: " + error.message);
-          setIsFetching(() => false);
+        .catch((e) => {
+          return e.data.message
+            ? setErrorMessage("Error: " + e.data.message)
+            : setErrorMessage("Error: " + e.data.error.message);
         });
     } else {
       setIsEmpty(true);
     }
-  }
+  };
 
   return (
-    <div className="App bg-gray-600 gap-28">
-      <div className="converter-body shadow-2xl">
+    <div className="App bg-gray-600">
+      <div className="item-body scale-125 sm:scale-150 shadow-2xl">
         <h2 className="font-bold text-lg mb-8">Currency converter</h2>
         <label htmlFor="amount" className="block text-xs text-left font-medium">
           {isEmpty ? (
@@ -311,7 +290,7 @@ const Exchange: React.FC = () => {
           isEmpty={isEmpty}
           value={amount}
           onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
-            if (e.key === "Enter") fetchCurrencies();
+            if (e.key === "Enter") handleGetConvertedAmount();
           }}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setAmount(e.target.value);
@@ -366,35 +345,27 @@ const Exchange: React.FC = () => {
           </div>
         </div>
         <div className="text-left max-h-5 h-full text-xs mt-3 transition duration-200">
-          {convertedAmount ? (
+          {convertedAmount && (
             <div>
               {moved
                 ? `${amount} ${toCurrency} = ${convertedAmount} ${fromCurrency}`
                 : `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
             </div>
-          ) : (
-            <div className="text-red-600">{errorMessage}</div>
+          )}
+          {isAmountError && (
+            <div className="text-xxs text-red-600">{errorMessage}</div>
           )}
         </div>
         <button
-          onClick={fetchCurrencies}
+          onClick={handleGetConvertedAmount}
           className="justify-self-end flex justify-center mt-5 items-center text-sm rounded bg-sky-700 hover:bg-sky-800 transition duration-200 text-white h-11 w-full"
         >
-          {isFetching ? <Loader /> : "Get Exchange Rate"}
+          {isAmountLoading ? (
+            <Loader color="fill-gray-100" />
+          ) : (
+            "Get Exchange Rate"
+          )}
         </button>
-      </div>
-      <div className="converter-body shadow-2xl">
-        <h2 className="font-bold text-lg mb-4">Exchange history</h2>
-        <ul className="overflow-scroll h-56 border border-gray-400 rounded custom-shadow">
-          {exchangeList.map((exchangeItem: IExchangeItem) => {
-            return (
-              <ExchangeItem key={exchangeItem.id} exchangeItem={exchangeItem} />
-            );
-          })}
-          <button className="block w-11/12 text-sm h-7 bg-red-700 hover:bg-red-800 transition duration-200 text-white m-2 border rounded">
-            Clear history
-          </button>
-        </ul>
       </div>
     </div>
   );

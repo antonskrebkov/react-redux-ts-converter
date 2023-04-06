@@ -22,15 +22,14 @@
 .App {
   box-sizing: border-box;
   font-family: sans-serif;
-  width: 100vw;
-  height: calc(100vh - 64px);
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  height: calc(100vh - 64px);
 }
 
 .calc-body {
-  scale: 1.3;
   background-color: rgb(167, 167, 167);
   width: 230px;
   height: 315px;
@@ -42,8 +41,7 @@
   border: 3px rgb(70, 70, 70) solid;
 }
 
-.converter-body {
-  scale: 1.3;
+.item-body {
   padding: 18px 10px;
   background-color: #fff;
   width: 230px;

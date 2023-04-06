@@ -3,7 +3,7 @@ import IDate from "../interfaces/IDate";
 import ITime from "../interfaces/ITime";
 
 export const formatDate = (exchangeItem: IExchangeItem) => {
-  const dateAdded: Date = new Date(exchangeItem.id)
+  const dateAdded: Date = new Date(exchangeItem.timestamp)
   const date: IDate = {
     day: dateAdded.getDate().toString().padStart(2, '0'),
     month: (dateAdded.getMonth() + 1).toString().padStart(2, '0'),
@@ -13,7 +13,7 @@ export const formatDate = (exchangeItem: IExchangeItem) => {
 }
 
 export const formatTime = (exchangeItem: IExchangeItem) => {
-  const dateAdded: Date = new Date(exchangeItem.id)
+  const dateAdded: Date = new Date(exchangeItem.timestamp)
   const time: ITime = {
     hours: dateAdded.getHours().toString().padStart(2, '0'),
     minutes: dateAdded.getMinutes().toString().padStart(2, '0'),

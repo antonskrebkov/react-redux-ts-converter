@@ -1,6 +1,7 @@
 import "./App.css";
 import Calc from "./pages/Calc";
-import Exchange from "./pages/Exchange";
+import Converter from "./pages/Converter";
+import Exchanges from "./pages/Exchanges";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -10,7 +11,8 @@ const App: React.FC = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Calc />}></Route>
-        <Route path="/exchange" element={<Exchange />}></Route>
+        <Route path="/converter" element={<Converter />}></Route>
+        <Route path="/exchanges" element={<Exchanges />}></Route>
       </Routes>
     </BrowserRouter>
   );

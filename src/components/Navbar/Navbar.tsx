@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const navigation = [
     { name: "Calculator", to: "/" },
-    { name: "Exchange", to: "/exchange" },
+    { name: "Converter", to: "/converter" },
+    { name: "Exchanges", to: "/exchanges" },
   ];
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

@@ -1,0 +1,130 @@
+{
+  "exchange": [
+    {
+      "timestamp": 1680650038790,
+      "rate": 23.69,
+      "amount": 1,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 23.69,
+      "id": 1
+    },
+    {
+      "timestamp": 1680650038790,
+      "rate": 23.69,
+      "amount": 1,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 23.69,
+      "id": 2
+    },
+    {
+      "timestamp": 1680650038790,
+      "rate": 23.69,
+      "amount": 1,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 23.69,
+      "id": 3
+    },
+    {
+      "timestamp": 1680653106382,
+      "rate": 36.8,
+      "amount": 220,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 8096.25,
+      "id": 5
+    },
+    {
+      "timestamp": 1680686983973,
+      "rate": 23.69,
+      "amount": 111,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2629.53,
+      "id": 6
+    },
+    {
+      "timestamp": 1680688090691,
+      "rate": 23.69,
+      "amount": 123,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2913.84,
+      "id": 7
+    },
+    {
+      "timestamp": 1680688298531,
+      "rate": 23.69,
+      "amount": 123,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2913.82,
+      "id": 8
+    },
+    {
+      "timestamp": 1680688381974,
+      "rate": 23.69,
+      "amount": 123,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2913.86,
+      "id": 9
+    },
+    {
+      "timestamp": 1680690152392,
+      "rate": 23.69,
+      "amount": 1232,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 29185.64,
+      "id": 10
+    },
+    {
+      "timestamp": 1680728275598,
+      "rate": 23.55,
+      "amount": 111,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2614.42,
+      "id": 11
+    },
+    {
+      "timestamp": 1680730298280,
+      "rate": 23.55,
+      "amount": 222,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 5228.6,
+      "id": 12
+    },
+    {
+      "timestamp": 1680730443219,
+      "rate": 23.55,
+      "amount": 333,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 7842.62,
+      "id": 13
+    },
+    {
+      "timestamp": 1680730544340,
+      "rate": 0.04,
+      "amount": 1,
+      "fromCurrency": "AFN",
+      "toCurrency": "AED",
+      "convertedAmount": 0.04,
+      "id": 14
+    },
+    {
+      "timestamp": 1680730546300,
+      "rate": 23.55,
+      "amount": 1,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 23.55,
+      "id": 15
+    }
+  ]
+}
