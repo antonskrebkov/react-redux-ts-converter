@@ -1,4 +1,4 @@
-export default interface ExchangeItem {
+export default interface IExchangeItem {
   id: number,
   timestamp: number,
   rate: number,

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import NumberButton from "../components/UI/buttons/NumberButton";
 import SpecButton from "../components/UI/buttons/SpecButton";
 import MathButton from "../components/UI/buttons/MathButton";
 import PrettyInput from "../components/UI/input/PrettyInput";
+import { calcSetter } from "../helpers";
 
 const Calc: React.FC = () => {
   const [calcQuery, setCalcQuery] = useState<string>("0");
@@ -73,67 +74,19 @@ const Calc: React.FC = () => {
     switch (mathSign) {
       case "+":
         result = a + b;
-        if (!Number.isInteger(result)) {
-          if (target.value === "=") {
-            setCalcQuery(result.toFixed(2));
-          } else {
-            setCalcQuery(result.toFixed(2) + target.value);
-          }
-        } else {
-          if (target.value === "=") {
-            setCalcQuery(String(result));
-          } else {
-            setCalcQuery(result + target.value);
-          }
-        }
+        calcSetter(result, target, setCalcQuery);
         break;
       case "-":
         result = a - b;
-        if (!Number.isInteger(result)) {
-          if (target.value === "=") {
-            setCalcQuery(result.toFixed(2));
-          } else {
-            setCalcQuery(result.toFixed(2) + target.value);
-          }
-        } else {
-          if (target.value === "=") {
-            setCalcQuery(String(result));
-          } else {
-            setCalcQuery(result + target.value);
-          }
-        }
+        calcSetter(result, target, setCalcQuery);
         break;
       case "/":
         result = a / b;
-        if (!Number.isInteger(result)) {
-          if (target.value === "=") {
-            setCalcQuery(result.toFixed(2));
-          } else {
-            setCalcQuery(result.toFixed(2) + target.value);
-          }
-        } else {
-          if (target.value === "=") {
-            setCalcQuery(String(result));
-          } else {
-            setCalcQuery(result + target.value);
-          }
-        }
+        calcSetter(result, target, setCalcQuery);
         break;
       case "*":
         result = a * b;
-        if (!Number.isInteger(result)) {
-          if (target.value === "=") {
-            setCalcQuery(result.toFixed(2));
-          } else {
-            setCalcQuery(result.toFixed(2) + target.value);
-          }
-        } else {
-          if (target.value === "=") {
-            setCalcQuery(String(result));
-          } else {
-            setCalcQuery(result + target.value);
-          }
-        }
+        calcSetter(result, target, setCalcQuery);
         break;
       default:
         result = "Error";

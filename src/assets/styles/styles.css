@@ -83,10 +83,6 @@
   transform: translateX(-121px);
 }
 
-.custom-shadow {
-  box-shadow: 0 0 50px -12px rgb(0 0 0 / 0.25);
-}
-
 .text-xxs {
   font-size: 10px;
 }

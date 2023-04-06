@@ -1,4 +1,4 @@
-export default interface Currency {
+export default interface ICurrency {
   value: string;
   label: string;
 }

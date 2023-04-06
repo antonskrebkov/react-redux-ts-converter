@@ -1,7 +1,7 @@
 interface AmountInputProps {
   isEmpty: boolean;
   value: string;
-  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -24,7 +24,7 @@ const CurInput: React.FC<AmountInputProps> = ({
         name="amount"
         id="amount"
         value={value}
-        onKeyDown={onKeyDown}
+        // onKeyDown={onKeyDown}
         onChange={onChange}
         className={styles.join(" ")}
         placeholder="0.00"

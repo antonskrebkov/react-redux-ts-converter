@@ -2,6 +2,7 @@ import IExchangeItem from "../../interfaces/IExchangeItem";
 import arrowRight from "../../assets/images/arrow-right.svg";
 import trash from "../../assets/images/trash.svg";
 import { formatDate, formatTime } from "../../helpers";
+
 interface ExchangeItemProps {
   exchangeItem: IExchangeItem;
   remove: (item: IExchangeItem) => void;

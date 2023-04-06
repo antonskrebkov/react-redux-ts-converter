@@ -116,6 +116,267 @@
       "toCurrency": "AFN",
       "convertedAmount": 23.55,
       "id": 15
+    },
+    {
+      "timestamp": 1680783326850,
+      "rate": 23.5,
+      "amount": 123,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2890.42,
+      "id": 16
+    },
+    {
+      "timestamp": 1680783331348,
+      "rate": 0.04,
+      "amount": 123,
+      "fromCurrency": "AFN",
+      "toCurrency": "AED",
+      "convertedAmount": 5.23,
+      "id": 17
+    },
+    {
+      "timestamp": 1680797473303,
+      "rate": 0.04,
+      "amount": 123,
+      "fromCurrency": "AFN",
+      "toCurrency": "AED",
+      "convertedAmount": 5.22,
+      "id": 18
+    },
+    {
+      "timestamp": 1680797474700,
+      "rate": 23.55,
+      "amount": 123,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 2897.18,
+      "id": 19
+    },
+    {
+      "timestamp": 1680798258129,
+      "rate": 23.55,
+      "amount": 13,
+      "fromCurrency": "AED",
+      "toCurrency": "AFN",
+      "convertedAmount": 306.2,
+      "id": 20
+    },
+    {
+      "timestamp": 1680798948679,
+      "rate": 36.8,
+      "amount": 1000,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 36804.73,
+      "id": 21
+    },
+    {
+      "timestamp": 1680798953403,
+      "rate": 0.03,
+      "amount": 1000,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 27.17,
+      "id": 22
+    },
+    {
+      "timestamp": 1680817815147,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 23
+    },
+    {
+      "timestamp": 1680817846300,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 24
+    },
+    {
+      "timestamp": 1680818048900,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 25
+    },
+    {
+      "timestamp": 1680818062687,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 26
+    },
+    {
+      "timestamp": 1680818131464,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 27
+    },
+    {
+      "timestamp": 1680818154518,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 28
+    },
+    {
+      "timestamp": 1680818179566,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 29
+    },
+    {
+      "timestamp": 1680818202883,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 30
+    },
+    {
+      "timestamp": 1680818318005,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 31
+    },
+    {
+      "timestamp": 1680818330675,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 32
+    },
+    {
+      "timestamp": 1680818366017,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 33
+    },
+    {
+      "timestamp": 1680818369837,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 34
+    },
+    {
+      "timestamp": 1680818397025,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 35
+    },
+    {
+      "timestamp": 1680818398104,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 36
+    },
+    {
+      "timestamp": 1680818413647,
+      "rate": 36.8,
+      "amount": 100,
+      "fromCurrency": "USD",
+      "toCurrency": "UAH",
+      "convertedAmount": 3680.47,
+      "id": 37
+    },
+    {
+      "timestamp": 1680818415921,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 38
+    },
+    {
+      "timestamp": 1680818417801,
+      "rate": 0.03,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "USD",
+      "convertedAmount": 2.72,
+      "id": 39
+    },
+    {
+      "timestamp": 1680818424874,
+      "rate": 0.02,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "EUR",
+      "convertedAmount": 2.49,
+      "id": 40
+    },
+    {
+      "timestamp": 1680818427120,
+      "rate": 40.18,
+      "amount": 100,
+      "fromCurrency": "EUR",
+      "toCurrency": "UAH",
+      "convertedAmount": 4018.47,
+      "id": 41
+    },
+    {
+      "timestamp": 1680818503492,
+      "rate": 40.19,
+      "amount": 100,
+      "fromCurrency": "EUR",
+      "toCurrency": "UAH",
+      "convertedAmount": 4018.86,
+      "id": 42
+    },
+    {
+      "timestamp": 1680818506909,
+      "rate": 0.02,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "EUR",
+      "convertedAmount": 2.49,
+      "id": 43
+    },
+    {
+      "timestamp": 1680818511049,
+      "rate": 0.02,
+      "amount": 100,
+      "fromCurrency": "UAH",
+      "toCurrency": "EUR",
+      "convertedAmount": 2.49,
+      "id": 44
     }
   ],
   "currencies": [

@@ -21,3 +21,19 @@ export const formatTime = (exchangeItem: IExchangeItem) => {
   }
   return `${time.hours}:${time.minutes}:${time.seconds}`
 }
+
+export const calcSetter = (result: number, target: HTMLInputElement, setter: React.Dispatch<React.SetStateAction<string>>): void => {
+  if (!Number.isInteger(result)) {
+    if (target.value === "=") {
+      setter(result.toFixed(2));
+    } else {
+      setter(result.toFixed(2) + target.value);
+    }
+  } else {
+    if (target.value === "=") {
+      setter(String(result));
+    } else {
+      setter(result + target.value);
+    }
+  }
+}
