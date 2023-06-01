@@ -97,6 +97,7 @@ const Exchange: React.FC = () => {
           isEmpty={isEmpty}
           value={amount}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            console.log(e);
             setAmount(e.target.value);
             setIsEmpty(false);
             setConvertedAmount("");
