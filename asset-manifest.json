@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-redux-ts-converter/static/css/main.589bf9d4.css",
-    "main.js": "/react-redux-ts-converter/static/js/main.a2a75e6e.js",
+    "main.js": "/react-redux-ts-converter/static/js/main.1f9bba9e.js",
     "static/media/Calculator.woff": "/react-redux-ts-converter/static/media/Calculator.83239e33f374d4a53298.woff",
     "static/media/Calculator.woff2": "/react-redux-ts-converter/static/media/Calculator.a9e9fe9b43c679a4c83d.woff2",
     "static/media/arrow-left.svg": "/react-redux-ts-converter/static/media/arrow-left.e75cebc891acd7b7711c1a516aaf0e0f.svg",
@@ -11,10 +11,10 @@
     "static/media/arrow-right.svg": "/react-redux-ts-converter/static/media/arrow-right.235acc004f02c760ea11e623d82357af.svg",
     "static/media/trash.svg": "/react-redux-ts-converter/static/media/trash.2e2dbd1ef59e724c282811454a53daec.svg",
     "main.589bf9d4.css.map": "/react-redux-ts-converter/static/css/main.589bf9d4.css.map",
-    "main.a2a75e6e.js.map": "/react-redux-ts-converter/static/js/main.a2a75e6e.js.map"
+    "main.1f9bba9e.js.map": "/react-redux-ts-converter/static/js/main.1f9bba9e.js.map"
   },
   "entrypoints": [
     "static/css/main.589bf9d4.css",
-    "static/js/main.a2a75e6e.js"
+    "static/js/main.1f9bba9e.js"
   ]
 }
